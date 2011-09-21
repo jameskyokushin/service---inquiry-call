@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @service.company %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @service.address %>
+</p>
+
+<p>
+  <b>Contact person:</b>
+  <%= @service.contact_person %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @service.contact_number %>
+</p>
+
+<p>
+  <b>E mail:</b>
+  <%= @service.e_mail %>
+</p>
+
+<p>
+  <b>Complain:</b>
+  <%= @service.complain %>
+</p>
+
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

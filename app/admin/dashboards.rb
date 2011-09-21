@@ -1,5 +1,13 @@
 ActiveAdmin::Dashboards.build do
 
+  section "Recent Calls" do 
+   table_for Service.order("created_at desc").limit(5) do
+      column "Date Created", :created_at
+      column :complain
+   end
+   strong { link_to "View All Calls", admin_services_path }
+  end
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.

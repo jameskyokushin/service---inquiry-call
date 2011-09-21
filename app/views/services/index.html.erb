@@ -1,0 +1,33 @@
+<h1>Listing services</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Address</th>
+    <th>Contact person</th>
+    <th>Contact number</th>
+    <th>E mail</th>
+    <th>Complain</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @services.each do |service| %>
+  <tr>
+    <td><%= service.company %></td>
+    <td><%= service.address %></td>
+    <td><%= service.contact_person %></td>
+    <td><%= service.contact_number %></td>
+    <td><%= service.e_mail %></td>
+    <td><%= service.complain %></td>
+    <td><%= link_to 'Show', service %></td>
+    <td><%= link_to 'Edit', edit_service_path(service) %></td>
+    <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Service', new_service_path %>
