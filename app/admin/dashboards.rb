@@ -1,6 +1,6 @@
 ActiveAdmin::Dashboards.build do
 
-  section "Recent Calls" do 
+  section "New Calls" do 
    table_for Service.order("created_at desc").limit(5) do
       column "Date Created", :created_at
       column :complain
