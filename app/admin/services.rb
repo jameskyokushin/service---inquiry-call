@@ -9,4 +9,5 @@ ActiveAdmin.register Service do
     default_actions
   end
   
+ 
 end
