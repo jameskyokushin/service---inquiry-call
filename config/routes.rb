@@ -1,4 +1,6 @@
 ServiceCall::Application.routes.draw do
+  resources :inquiries
+
   resources :services
 
   ActiveAdmin.routes(self)
