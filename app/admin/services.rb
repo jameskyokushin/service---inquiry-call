@@ -1,12 +1,11 @@
 ActiveAdmin.register Service do
   
   index do
-    column "Date Created", :created_at
+    column "Asi Branch", :branch
     column :company
     column :contact_person
     column "Email", :e_mail
     column :id
-    default_actions
   end
   
  
