@@ -5,10 +5,6 @@ ActiveAdmin::Dashboards.build do
       column "Company", :company
       column "SERVICE",:complain
    end
-   table_for Inquiry.order("created_at desc").limit(5) do
-      column "Company", :company
-      column "INQUIRY",:inquiry
-   end
    strong { link_to "View All Calls", admin_services_path }
   end
 
