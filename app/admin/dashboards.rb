@@ -1,8 +1,10 @@
 ActiveAdmin::Dashboards.build do
 
   section "New Calls" do 
-   table_for Service.order("created_at desc").limit(5) do
-      column "Company", :company
+   table_for Service.order("created_at desc").limit(10) do
+      column "Company", :company do |service|
+        link_to service.company, [:admin, service]
+      end
       column "SERVICE",:complain
    end
    strong { link_to "View All Calls", admin_services_path }
