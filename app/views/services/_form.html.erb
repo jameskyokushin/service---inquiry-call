@@ -1,41 +1,7 @@
-<%= form_for(@service) do |f| %>
-  <% if @service.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
-
-      <ul>
-      <% @service.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= semantic_form_for(@service) do |f| %>
+  <%= f.inputs do %>
+  <%= f.input :branch, :include_blank => false %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :company %><br />
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_person %><br />
-    <%= f.text_field :contact_person %>
-  </div>
-  <div class="field">
-    <%= f.label :contact_number %><br />
-    <%= f.text_field :contact_number %>
-  </div>
-  <div class="field">
-    <%= f.label :e_mail %><br />
-    <%= f.text_field :e_mail %>
-  </div>
-  <div class="field">
-    <%= f.label :complain %><br />
-    <%= f.text_area :complain %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ <%= f.buttons %>
 <% end %>

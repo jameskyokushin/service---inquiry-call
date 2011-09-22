@@ -1,4 +1,6 @@
 ServiceCall::Application.routes.draw do
+  resources :branches
+
   resources :inquiries
 
   resources :services
