@@ -1,11 +1,12 @@
 ActiveAdmin.register Service do
   
   index do
-    column "Asi Branch", :branch
-    column :company
+    table_for Service.order("created_at desc")
+      column "Company", :company do |service|
+        link_to service.company, [:admin, service]
+      end
     column :contact_person
-    column "Email", :e_mail
-    column :id
+    column "Asi Branch", :branch
   end
   
  
