@@ -18,6 +18,6 @@ class Service < ActiveRecord::Base
           when STATUS_PENDING then :warning
           when STATUS_COMPLETE then :ok
         end
-   end
+      end
 end
 
