@@ -25,7 +25,7 @@ form do |f|
 
 index do
     column :status do |service|
-      status_tag service.status, service.statustag
+      status_tag service.status, service.status_tag
     end
     column :company do |service|
         link_to service.company, admin_service_path(service)
