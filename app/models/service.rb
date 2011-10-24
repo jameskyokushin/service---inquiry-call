@@ -1,7 +1,7 @@
 class Service < ActiveRecord::Base
 
   STATUS_PENDING = 'PENDING'
-  STATUS_COMPLETE  = 'COMPLETE'
+  STATUS_COMPLETE  = 'COMPLETED'
 
   belongs_to :branch
 
