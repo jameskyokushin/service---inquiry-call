@@ -1,12 +1,15 @@
 ActiveAdmin.register Service do
 
+filter :branch_id
+filter :company
+filter :e_mail
  action_item :only => :show do
     link_to "COMPLETED", send_service_admin_service_path(resource)
   end
   
   member_action :send_service do
     @service = Service.find(params[:id])
-    @service.status = Service::STATUS_COMPLETE
+    @service.status = Service::STATUS_COMPLETED
     @service.save
     
     redirect_to admin_service_path(@service), :notice => "SERVICE COMPLETED"
@@ -50,8 +53,8 @@ ActiveAdmin.register Service do
     services.where(:status => Service::STATUS_PENDING)
   end
 
-  scope :COMPLETE do |services|
-    services.where(:status => Service::STATUS_COMPLETE)
+  scope :COMPLETED do |services|
+    services.where(:status => Service::STATUS_COMPLETED)
   end
 form do |f|
     f.inputs "Service Call" do

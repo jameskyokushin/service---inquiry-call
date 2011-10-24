@@ -1,5 +1,8 @@
 ActiveAdmin.register Service do
 
+filter :branch_id
+filter :company
+filter :e_mail
  action_item :only => :show do
     link_to "COMPLETED", send_service_admin_service_path(resource)
   end
@@ -21,7 +24,7 @@ ActiveAdmin.register Service do
       row("Contact Person") { service.contact_person }
       row("Contact Number") { service.contact_number }
       row("E-mail Address") { service.e_mail }
-      row("E-mail Address") { service.status}
+      row("STATUS") { service.status}
       
       end
     end
@@ -50,8 +53,8 @@ ActiveAdmin.register Service do
     services.where(:status => Service::STATUS_PENDING)
   end
 
-  scope :COMPLETE do |services|
-    services.where(:status => Service::STATUS_COMPLETE)
+  scope :COMPLETED do |services|
+    services.where(:status => Service::STATUS_COMPLETED)
   end
 form do |f|
     f.inputs "Service Call" do

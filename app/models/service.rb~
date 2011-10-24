@@ -1,7 +1,7 @@
 class Service < ActiveRecord::Base
 
   STATUS_PENDING = 'PENDING'
-  STATUS_COMPLETE  = 'COMPLETE'
+  STATUS_COMPLETED  = 'COMPLETED'
 
   belongs_to :branch
 
@@ -9,14 +9,14 @@ class Service < ActiveRecord::Base
       def status_collection
        {
         "PENDING" => STATUS_PENDING,
-        "COMPLETE" => STATUS_COMPLETE
+        "COMPLETE" => STATUS_COMPLETED
        }
       end
    end
    def status_tag
         case self.status
           when STATUS_PENDING then :warning
-          when STATUS_COMPLETE then :ok
+          when STATUS_COMPLETED then :ok
         end
    end
 end
