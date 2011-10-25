@@ -55,7 +55,7 @@ form do |f|
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"
       f.input :complain, :input_html => { :rows => 4 }
-      f.input :status, :collection => Service.status_collection, :as => :radio
+      f.input :status, :collection => Service.status_collection, :as => :radio, :hint => "YOU NEED TO PICK ONE STATUS"
     end
    f.buttons
   end
