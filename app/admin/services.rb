@@ -28,22 +28,11 @@ filter :e_mail
       
       end
     end
-   # panel "Items" do
-   #   table_for shipping.items do |t|
-   #   t.column("Qty.") { |item| number_with_delimiter item.quantity }
-   #    t.column("Model.") { |item| item.model  }
-   #    t.column("Description.") { |item| item.description  }
-       #t.column("Unit Price.") { |item| number_to_currency item.amount }
-   #   end
-   # end
+  
     panel "== Service ==" do
       attributes_table_for service do
         row("Problem / Solution") { service.complain }
-   #     row("Recieved By") { shipping.recieve_by }
-   #     row("By") { shipping.status }
-   #     row("Forwarder") { shipping.forwarder }
-   #     row("Estimated Time/Date Departure") {  shipping.pinadala }
-   #     row("Estimated Time/Date Arrival") {  shipping.darating }
+ 
       end
     end
   end
@@ -61,6 +50,7 @@ form do |f|
       f.input :branch
       f.input :company
       f.input :address
+
       f.input :contact_person
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"

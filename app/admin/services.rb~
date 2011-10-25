@@ -9,7 +9,7 @@ filter :e_mail
   
   member_action :send_service do
     @service = Service.find(params[:id])
-    @service.status = Service::STATUS_COMPLETE
+    @service.status = Service::STATUS_COMPLETED
     @service.save
     
     redirect_to admin_service_path(@service), :notice => "SERVICE COMPLETED"
@@ -61,6 +61,7 @@ form do |f|
       f.input :branch
       f.input :company
       f.input :address
+
       f.input :contact_person
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"

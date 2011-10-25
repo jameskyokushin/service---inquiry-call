@@ -1,6 +1,6 @@
 ActiveAdmin::Dashboards.build do
 
-  section "Recent Calls" do 
+  section "New Calls" do 
    table_for Service.order("created_at desc").limit(10) do
       column "Company", :company do |service|
         link_to service.company, [:admin, service]
