@@ -64,10 +64,13 @@ index do
     column :status do |service|
       status_tag service.status, service.status_tag
     end
-    column :company do |service|
-        link_to service.company, admin_service_path(service)
-      end
+    column :company
     column :contact_person
+    column do |service|
+      link_to("Details", admin_service_path(service)) + " | " + \
+      #link_to("Edit", edit_admin_inquiry_path(inquiry)) + " | " + \
+      link_to("Delete", admin_service_path(service), :method => :delete, :confirm => "Are you sure?")
+    end
   end
 end
 

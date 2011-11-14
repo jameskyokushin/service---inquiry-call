@@ -55,7 +55,7 @@ form do |f|
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"
       f.input :complain, :input_html => { :rows => 4 }
-      f.input :status, :collection => Service.status_collection, :as => :radio, :hint => "You need to pick one Status"
+      f.input :status, :collection => Service.status_collection, :as => :radio, :hint => "YOU NEED TO PICK ONE STATUS"
     end
    f.buttons
   end
@@ -64,10 +64,13 @@ index do
     column :status do |service|
       status_tag service.status, service.status_tag
     end
-    column :company do |service|
-        link_to service.company, admin_service_path(service)
-      end
+    column :company
     column :contact_person
+    column do |service|
+      link_to("Details", admin_inquiry_path(inquiry)) + " | " + \
+      #link_to("Edit", edit_admin_inquiry_path(inquiry)) + " | " + \
+      link_to("Delete", admin_inquiry_path(inquiry), :method => :delete, :confirm => "Are you sure?")
+    end
   end
 end
 
