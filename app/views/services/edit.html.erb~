@@ -6,8 +6,6 @@
 <%= link_to "Sign out",  destroy_user_session_path,  :method=> :delete %> ||
 <%= current_user.email if user_signed_in? %>
 </div>
-<br />
-<br />
 <%= render 'form' %>
 
 <%= link_to 'Show', @service %> |

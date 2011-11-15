@@ -50,7 +50,6 @@ form do |f|
       f.input :branch
       f.input :company
       f.input :address
-
       f.input :contact_person
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"

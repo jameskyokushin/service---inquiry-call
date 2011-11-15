@@ -10,7 +10,6 @@
 <%= current_user.email if user_signed_in? %>
 </div>
 <br />
-<br />
 <%= semantic_form_for(@service) do |f| %>
   <%= f.inputs "New Service" do %>
   <%= f.input :branch, :include_blank => false %>

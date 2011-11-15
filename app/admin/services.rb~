@@ -56,7 +56,6 @@ form do |f|
       f.input :e_mail, :label => "Email Address"
       f.input :complain, :input_html => { :rows => 4 }
       f.input :status, :collection => Service.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" }
-       , :collection => LeaveForm.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" }
     end 
    f.buttons
   end

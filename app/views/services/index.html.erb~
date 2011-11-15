@@ -2,7 +2,7 @@
 <br />
 <br />
 <div id="link1">
-<%= link_to 'listing Service', services_path %>||
+<%= link_to 'listing Service', send_service_admin_service_path(resource) %>||
 <%= link_to 'Create New Service', new_service_path %>
 </div>
 <div id="link">
