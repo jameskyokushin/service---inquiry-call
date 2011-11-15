@@ -54,3 +54,29 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+#form {
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#b0c4de; 
+}
+#form1 {
+  width: 950px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#link {
+ float: right;
+ font-weight: bold;
+}
+#link1 {
+ float: left;
+ font-weight: bold;
+}
+
+
+

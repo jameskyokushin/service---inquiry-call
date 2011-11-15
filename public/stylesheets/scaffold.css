@@ -59,7 +59,7 @@ div.field, div.actions {
   width: 500px;
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 #form1 {
   width: 950px;
@@ -76,5 +76,6 @@ div.field, div.actions {
  float: left;
  font-weight: bold;
 }
+
 
 
