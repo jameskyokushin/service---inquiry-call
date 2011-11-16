@@ -65,6 +65,7 @@ index do
     end
     column :company
     column :contact_person
+    column :prepared_by
     column do |service|
       link_to("Details", admin_service_path(service)) + " | " + \
       #link_to("Edit", edit_admin_inquiry_path(inquiry)) + " | " + \

@@ -20,7 +20,8 @@
   <%= f.input :contact_number, :label => "Any Contact Number" %> 
   <%= f.input :e_mail, :label => "Email Address" %>
   <%= f.input :complain, :input_html => { :rows => 4 } %>
-  <%= f.input :prepared_by,  :collection => [["- Auto Generated -","  ",current_user.email]], %>
+  <%= f.input :status, :collection => Service.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" } %>
+  <%= f.input :prepared_by,  :collection => [["- Auto Generated -","  ",current_user.email]], :wrapper_html => { :style => "display:none;" }, :include_blank => false %>
   <% end %>
 
  <%= f.buttons %>
