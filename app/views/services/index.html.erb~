@@ -30,7 +30,6 @@
     <td><%= service.company %></td>
    
     <td><%= service.contact_person %></td>
-    <td><%= service.contact_number %></td>
    
     <td><%= service.prepared_by %></td>
     <td><%= service.status %></td>
@@ -42,7 +41,5 @@
 </table>
 
 <br />
-
-<%= link_to 'New Service', new_service_path %>
 </div>
 

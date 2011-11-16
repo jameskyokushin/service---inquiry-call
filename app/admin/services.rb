@@ -3,17 +3,35 @@ ActiveAdmin.register Service do
 filter :branch_id
 filter :company
 filter :e_mail
- action_item :only => :show do
-    link_to "COMPLETED", send_service_admin_service_path(resource)
+#-----------------------------------------------------------------------------------
+# for completed
+  action_item :only => :show do
+    link_to "COMPLETED", completed_service_admin_service_path(resource)
   end
-  
-  member_action :send_service do
+
+ 
+  member_action :completed_service do
     @service = Service.find(params[:id])
     @service.status = Service::STATUS_COMPLETED
     @service.save
     
     redirect_to admin_service_path(@service), :notice => "SERVICE COMPLETED"
   end
+#-------------------------------------------------------------------------------------
+# for collection
+  
+  action_item :only => :show do
+    link_to "FOR COLLECTION", collection_service_admin_service_path(resource)
+  end
+
+  member_action :collection_service do
+    @service = Service.find(params[:id])
+    @service.status = Service::STATUS_COLLECTION
+    @service.save
+    
+    redirect_to admin_service_path(@service), :notice => "FOR COLLECTION"
+  end
+
   
 # SHow View
   show :title => :company do
@@ -38,12 +56,17 @@ filter :e_mail
   end
   scope :all, :default => true
 
+
   scope :PENDING do |services|
-    services.where(:status => Service::STATUS_PENDING)
+    services.where( :status => Service::STATUS_PENDING )
   end
+  
+  scope :COLLECTION do |service|
+    service.where(:status => Service::STATUS_COLLECTION )
+  end  
 
   scope :COMPLETED do |services|
-    services.where(:status => Service::STATUS_COMPLETED)
+    services.where(:status => Service::STATUS_COMPLETED )
   end
 form do |f|
     f.inputs "Service Call" do

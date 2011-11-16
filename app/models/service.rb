@@ -12,28 +12,22 @@ class Service < ActiveRecord::Base
 
   STATUS_PENDING = 'PENDING'
   STATUS_COMPLETED  = 'COMPLETED'
-  #WARRANTY_UNDER_WARRANTY = 'UNDER WARRANTY'
-  #WARRANTY_OUT_OF_WARRANTY = 'OUT OF WARRANTY'
-  
+  STATUS_COLLECTION = 'FOR COLLECTION'
 
   belongs_to :branch
    class << self
       def status_collection
        {
         "PENDING" => STATUS_PENDING,
-        "COMPLETE" => STATUS_COMPLETED
+        "FOR COLLECTION" => STATUS_COLLECTION,
+        "COMPLETE" => STATUS_COMPLETED,
        }
       end
-      #def warranty_collection
-       #{
-       #    "UNDER WARRANTY" => WARRANTY_UNDER_WARRANTY
-       #    "OUT OF WARRANTY" => WARRANTY_OUT_OF_WARRANTY
-       # }
-      #end
    end
     def status_tag
         case self.status
           when STATUS_PENDING then :error
+          when STATUS_COLLECTION then :warning
           when STATUS_COMPLETED then :ok
         end
     end
