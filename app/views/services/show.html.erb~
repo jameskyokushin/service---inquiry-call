@@ -10,39 +10,50 @@
 <%= current_user.email if user_signed_in? %>
 </div>
 <br />
+<br />
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Company:</b>
-  <%= @service.company %>
-</p>
+<h4>
+  <b>COMPANY:</b>
+  <i><%= @service.company %></i>
+</h4>
 
-<p>
-  <b>Address:</b>
+<h4>
+  <b>ADDRESS:</b>
   <%= @service.address %>
-</p>
+</h4>
 
-<p>
-  <b>Contact person:</b>
+<h4>
+  <b>CONTACT PERSON:</b>
   <%= @service.contact_person %>
-</p>
+</h4>
 
-<p>
-  <b>Contact number:</b>
+<h4>
+  <b>CONTACT NUMBER:</b>
   <%= @service.contact_number %>
-</p>
+</h4>
 
-<p>
-  <b>E mail:</b>
+<h4>
+  <b>EMAIL:</b>
   <%= @service.e_mail %>
-</p>
+</h4>
 
-<p>
+<h4>
+  <b>WARRANTY NOTICE:</b>
+  <%= @service.warranty %>
+</h4>
+
+<h4>
+  <b>TERMS AND CONDITION:</b>
+  <%= @service.notes %>
+</h4>
+
+<h4>
   <b>Complain:</b>
   <%= @service.complain %>
-</p>
+</h4>
 
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+
+
 </div>
