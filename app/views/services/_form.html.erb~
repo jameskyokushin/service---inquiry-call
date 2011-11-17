@@ -14,13 +14,14 @@
 <%= semantic_form_for(@service) do |f| %>
   <%= f.inputs "New Service" do %>
   <%= f.input :branch, :include_blank => false %>
-  <!--<%= f.input :warranty, :collection => Service.warranty.collection, %>-->
   <%= f.input :company %>
   <%= f.input :address %>
   <%= f.input :contact_person %>
   <%= f.input :contact_number, :label => "Any Contact Number" %> 
   <%= f.input :e_mail, :label => "Email Address" %>
   <%= f.input :complain, :input_html => { :rows => 4 } %>
+  <%= f.input :warranty, :collection => [["Choose Any","EMPTY"],["Out of Warranty","Out of Warranty"], ["Under Warranty","Under Warranty"]], :include_blank => false %>
+  <%= f.input :notes, :input_html => { :rows => 4 }, :label => "Terms & Condition" %>
   <%= f.input :status, :collection => Service.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" } %>
   <%= f.input :prepared_by,  :collection => [["- Auto Generated -","  ",current_user.email]], :wrapper_html => { :style => "display:none;" }, :include_blank => false %>
   <% end %>

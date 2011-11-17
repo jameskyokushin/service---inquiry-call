@@ -6,7 +6,10 @@ class Service < ActiveRecord::Base
             :contact_number,
             :complain,
             :e_mail,
+            :warranty,
             :branch_id, :presence => true
+
+
   #validates :status, :inclusion => { :in => [STATUS_PENDING], :message => "You need to pick one status." }
 
 

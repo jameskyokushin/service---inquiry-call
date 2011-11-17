@@ -42,14 +42,15 @@ filter :e_mail
       row("Contact Person") { service.contact_person }
       row("Contact Number") { service.contact_number }
       row("E-mail Address") { service.e_mail }
-      row("STATUS") { service.status}
+      row("Warranty Notice") { service.warranty}
+      row("Terms & Condition") { simple_format service.notes }
       
       end
     end
   
     panel "== Service ==" do
       attributes_table_for service do
-        row("Problem / Solution") { service.complain }
+        row("Problem / Solution") { simple_format service.complain }
  
       end
     end
@@ -69,14 +70,16 @@ filter :e_mail
     services.where(:status => Service::STATUS_COMPLETED )
   end
 form do |f|
-    f.inputs "Service Call" do
-      f.input :branch
+    f.inputs "Service Call" dosimple_format
+      f.input :branch 
       f.input :company
       f.input :address
       f.input :contact_person
       f.input :contact_number, :label => "Any Contact Number"
       f.input :e_mail, :label => "Email Address"
       f.input :complain, :input_html => { :rows => 4 }
+      f.input :warranty, :collection => [["- Select -","EMPTY"],["Out of Warranty","Out of Warranty"], ["Under Warranty","Under Warranty"]], :include_blank => false
+      f.input :notes, :input_html => { :rows => 4 }, :label => "Terms & Condition"
       f.input :status, :collection => Service.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" }
     end 
    f.buttons
