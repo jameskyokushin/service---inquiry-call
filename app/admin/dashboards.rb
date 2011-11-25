@@ -1,33 +1,33 @@
 ActiveAdmin::Dashboards.build do
 
-   #section "Service Statistics" do
-   # div :class => "attributes_table" do
-   #   table do
-   #     tr do
-   #       th "OVER ALL PENDING"
-   #       td (Service.where(:status => Service::STATUS_PENDING).count), :style => "font-weight: bold;"
-   #     end
+   section "Service Statistics" do
+    div :class => "attributes_table" do
+      table do
+        tr do
+          th "OVER ALL PENDING"
+          td (Service.where(:status => Service::STATUS_PENDING).count), :style => "font-weight: bold;"
+        end
     
-   #     tr do
-   #       th "FOR COLLECTION"
-   #       td (Service.where(:status => Service::STATUS_COLLECTION).count), :style => "font-weight: bold;"
-   #     end
-    
-   #     tr do
-   #       th "COMPLETED"
-   #       td (Service.where(:status => Service::STATUS_COMPLETED).count), :style => "font-weight: bold;"
-   #     end
-   #   endServic
-   # end
-  #end
-  # section "Latest Services" do
-  #  table_for Service.order('created_at desc').limit(5).all do |t|
-  #    t.column("Company") { |service| link_to service.company, admin_service_path(service.company) }
-  #    t.column("Status") { |service| status_tag service.status, service.status_tag }
-  #    t.column("Warranty Notice") { |service| service.warranty }
-  #    t.column("Prepared by") { |service| service.prepared_by }
-  #  end
-  #end
+        tr do
+          th "FOR COLLECTION"
+          td (Service.where(:status => Service::STATUS_COLLECTION).count), :style => "font-weight: bold;"
+        end
+   
+        tr do
+          th "COMPLETED"
+          td (Service.where(:status => Service::STATUS_COMPLETED).count), :style => "font-weight: bold;"
+        end
+      end
+    end
+  end
+   section "Latest Services" do
+    table_for Service.order('created_at desc').limit(5).all do |t|
+      t.column("Status") { |service| status_tag service.status, service.status_tag }
+      t.column("Company") { |service|service.company }
+      t.column("Warranty Notice") { |service| service.warranty }
+      t.column("Prepared by") { |service| service.prepared_by }
+    end
+  end
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
