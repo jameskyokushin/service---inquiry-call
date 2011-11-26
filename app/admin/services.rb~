@@ -37,6 +37,7 @@ filter :e_mail
   show :title => :status do
     panel "Company Information" do
       attributes_table_for service do
+      row("Date of Call") { service.created_at }
       row("Company Name") { service.company }
       row("Address") { service.address }
       row("Contact Person") { service.contact_person }
@@ -79,7 +80,7 @@ form do |f|
       f.input :e_mail, :label => "Email Address"
       f.input :complain, :input_html => { :rows => 4 }
       f.input :warranty, :collection => [["Out of Warranty","OUT OF WARRANTY"],["Under Warranty","UNDER WARRANTY"]], :as => :radio
-      #f.input :notes, :input_html => { :rows => 4 }, :label => "Terms & Condition" 
+      f.input :notes, :input_html => { :rows => 4 }, :label => "Terms & Condition" 
       f.input :status, :collection => Service.status_collection, :include_blank => false, :wrapper_html => { :style => "display:none;" }
     end 
    f.buttons

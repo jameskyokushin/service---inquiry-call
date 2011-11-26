@@ -37,6 +37,7 @@ filter :e_mail
   show :title => :status do
     panel "Company Information" do
       attributes_table_for service do
+      row("Date of Call") { service.created_at }
       row("Company Name") { service.company }
       row("Address") { service.address }
       row("Contact Person") { service.contact_person }
@@ -92,6 +93,7 @@ index do
     column :company
     column :contact_person
     column :prepared_by
+    column :created_at
     column do |service|
       link_to("Details", admin_service_path(service)) + " | " + \
       #link_to("Edit", edit_admin_inquiry_path(inquiry)) + " | " + \
