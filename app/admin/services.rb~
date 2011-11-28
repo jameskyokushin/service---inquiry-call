@@ -1,4 +1,12 @@
+
+  
 ActiveAdmin.register Service do
+  sidebar :help, :only => :index do
+    h5 "Email us at"
+    h2 "james@kyokushin.com.ph"
+  end
+
+
 
 filter :branch_id
 filter :company
@@ -7,6 +15,7 @@ filter :e_mail
 # for completed
   action_item :only => :show do
     link_to "COMPLETED", completed_service_admin_service_path(resource)
+   
   end
 
  
@@ -85,6 +94,7 @@ form do |f|
     end 
    f.buttons
   end
+  
 
 index do
     column :status do |service|
@@ -93,6 +103,7 @@ index do
     column :company
     column :contact_person
     column :prepared_by
+    column :created_at
     column do |service|
       link_to("Details", admin_service_path(service)) + " | " + \
       #link_to("Edit", edit_admin_inquiry_path(inquiry)) + " | " + \
