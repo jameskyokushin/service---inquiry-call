@@ -1,0 +1,8 @@
+class ServiceMailer < ActionMailer::Base
+  default :from => "james@kyokushin.com.ph"
+
+  def notification_mailer(service)
+    mail(:to => service.email, :subject => "NEW SERVICE CALL")
+  end
+  
+end
