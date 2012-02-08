@@ -2,7 +2,9 @@ class ServicesController < InheritedResources::Base
   before_filter :authenticate_user!
 
   def index
-     @services = Service.order("").page(params[:page]).per(5)
+     @services = Service.order("").page(params[:page]).per(15)
+     @services = Service.order('id desc')
   end
 end
 
+@salescall = Salescall.order('id desc')
