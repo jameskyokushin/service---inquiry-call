@@ -7,4 +7,4 @@ class ServicesController < InheritedResources::Base
   end
 end
 
-@salescall = Salescall.order('id desc')
+

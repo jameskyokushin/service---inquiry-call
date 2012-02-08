@@ -3,7 +3,6 @@ class ServicesController < InheritedResources::Base
 
   def index
      @services = Service.order("").page(params[:page]).per(15)
-     @services = Service.order('id desc')
   end
 end
 
