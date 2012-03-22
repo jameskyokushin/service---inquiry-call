@@ -1,16 +1,16 @@
 <div id="form1">
-<br />
-<br />
-<div id="link1">
-<%= link_to 'listing Service', services_path %>||
-<%= link_to 'Create New Service', new_service_path %>
-</div>
+	<br />
+	<br />
+	<div id="link1">
+	<%= link_to 'listing Service', services_path %>||
+	<%= link_to 'Create New Service', new_service_path %>
+	</div>
 <div id="link">
-<%= link_to "Sign out",  destroy_user_session_path,  :method=> :delete %> ||
-<%= current_user.email if user_signed_in? %>
+	<%= link_to "Sign out",  destroy_user_session_path,  :method=> :delete %> ||
+	<%= current_user.email if user_signed_in? %>
 </div>
-<br />
-<br />
+	<br />
+	<br />
 <p id="notice"><%= notice %></p>
 
 <h4>
@@ -20,40 +20,45 @@
 
 <h4>
   <b>ADDRESS:</b>
-  <%= @service.address %>
+  <i><%= @service.address %></i>
 </h4>
 
 <h4>
   <b>CONTACT PERSON:</b>
-  <%= @service.contact_person %>
+  <i><%= @service.contact_person %></i>
 </h4>
 
 <h4>
   <b>CONTACT NUMBER:</b>
-  <%= @service.contact_number %>
+  <i><%= @service.contact_number %></i>
 </h4>
 
 <h4>
   <b>EMAIL:</b>
-  <%= @service.e_mail %>
+  <i><%= @service.e_mail %></i>
 </h4>
 
 <h4>
   <b>WARRANTY NOTICE:</b>
-  <%= @service.warranty %>
+  <i><%= @service.warranty %></i>
 </h4>
 
 <h4>
   <b>TERMS AND CONDITION:</b>
-  <%= @service.notes %>
+  <i><%= @service.notes %></i>
 </h4>
 
 <h4>
   <b>Complain:</b>
-  <%= @service.complain %>
+  <i><%= @service.complain %></i>
 </h4>
-
-
-
+<h4>
+  <b>Date Created:</b>
+  <i><%= @service.created_at %></i>
+</h4>
+<h4>
+  <b>Date Update:</b>
+  <i><%= @service.updated_at %></i>
+</h4>
 
 </div>

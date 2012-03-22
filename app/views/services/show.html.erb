@@ -1,16 +1,16 @@
 <div id="form1">
-<br />
-<br />
-<div id="link1">
-<%= link_to 'listing Service', services_path %>||
-<%= link_to 'Create New Service', new_service_path %>
-</div>
+	<br />
+	<br />
+	<div id="link1">
+	<%= link_to 'listing Service', services_path %>||
+	<%= link_to 'Create New Service', new_service_path %>
+	</div>
 <div id="link">
-<%= link_to "Sign out",  destroy_user_session_path,  :method=> :delete %> ||
-<%= current_user.email if user_signed_in? %>
+	<%= link_to "Sign out",  destroy_user_session_path,  :method=> :delete %> ||
+	<%= current_user.email if user_signed_in? %>
 </div>
-<br />
-<br />
+	<br />
+	<br />
 <p id="notice"><%= notice %></p>
 
 <h4>
@@ -52,8 +52,13 @@
   <b>Complain:</b>
   <i><%= @service.complain %></i>
 </h4>
-
-
-
+<h4>
+  <b>Date Created:</b>
+  <i><%= @service.created_at %></i>
+</h4>
+<h4>
+  <b>Date Update:</b>
+  <i><%= @service.updated_at %></i>
+</h4>
 
 </div>
